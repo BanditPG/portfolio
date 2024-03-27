@@ -1,0 +1,172 @@
+@import 'colors.scss';
+
+main {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+aside {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    padding-left: 2vw;
+    box-sizing: border-box;
+}
+
+.contentContainer {
+    min-height: 85vh;
+    box-sizing: border-box;
+    padding-left: 2vw;
+    padding-right: 2vw;;
+}
+
+.profile {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    .titles {
+        //font-size: 48pt;
+        font-size: 4vh;
+        color: $font-foreground
+    }
+}
+
+.profile, .project {
+    opacity: 0.8;
+    //background-image: radial-gradient($accent 1.4000000000000001px, transparent 1.4000000000000001px);
+    background-color: $default-background;
+    background: repeating-linear-gradient( -45deg, $accent, $accent 1px, $default-background 5px, $default-background 25px );
+    
+}
+
+.description {
+    display: flex;
+    flex-direction: row;
+}
+
+.verticalTitle {
+    writing-mode: vertical-rl;
+    
+    height: 100%;
+    width: 200px;
+    
+    box-sizing: border-box;
+    padding-top: 100px;
+
+    color: $font-background;
+    font-size: 4vh;
+}
+
+.sideText {
+    width: 100%;
+    font-size: 2.2vh;;
+    color: $font-foreground;
+
+    box-sizing: border-box;
+    padding: 5% 20% 5% 20%;
+    text-align: justify;
+    line-height: 5vh;
+}
+
+.projectTile {
+    width: 100%;
+    height: 10vh;
+
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    padding-left: 30px;
+
+    background-color: $accent;
+
+    cursor: pointer;
+
+    $default_poly: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: $default_poly;
+    -webkit-clip-path: $default_poly;
+    transform: none;
+    transition: .2s ease;
+
+    &:hover {
+        $poly: polygon(calc(100% - 30px) 0%, 100% 30px, 100% 100%, 30px 100%, 0% calc(100% - 30px), 0 0);
+        -webkit-clip-path: $poly;
+        clip-path: $poly;
+        transform: translateX(30px);
+    }
+}
+
+.projectView {
+    min-height: 80vh;
+    display: flex;
+    margin-bottom: 10vh;
+
+    div { width: 50%; }
+
+    .imageContainer {
+        text-align: center;
+
+        img, video {
+            margin: 10px;
+            max-width: 90%;
+        }
+    }
+
+    .descriptionContainer {
+        padding-right: 5%;
+        padding-left: 5%;
+        padding-top: 2%;
+        box-sizing: border-box;
+        text-align: justify;
+        line-height: 5vh;
+        background-color: $light-background;
+        h1 {
+            font-size: 4vh;
+        }
+    }
+}
+
+footer {
+    text-align: center;
+    color: $font-background;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+@media only screen and (max-width: 800px) {
+    .description {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .verticalTitle {
+        writing-mode: horizontal-tb;
+        
+        height: 200;
+        width: 100%;
+        
+        padding-left: 20px;;
+    }
+
+    .sideText {
+        padding: 0;
+        padding-left: 20px;;
+        padding-right: 20px;;
+    }
+
+    .projectView {
+        display: flex;
+        flex-direction: column-reverse;
+
+        div {
+            width: 100%;
+        }
+        
+    }
+}

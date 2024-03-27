@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@700&display=swap');
+@import './colors.scss';
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: $default-background;
+    font-family: 'Montserrat', sans-serif;
+    color: $font-foreground;
+}
+
+a {
+    all: unset;
+}
+
+p {
+    a {
+        text-decoration: underline;
+        text-decoration-color: $accent;
+        text-decoration-thickness: 3px;
+        cursor: pointer;
+    }
+}
+
+.noselect {
+    user-select: none;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $font-background;
+    transition: background-color .2s;
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $accent;
+}

@@ -1,0 +1,28 @@
+@import 'colors.scss';
+
+h1.banner {
+    background-color: $accent;
+    color: $default-background;
+    text-align: center;
+    font-weight: bold; 
+    text-transform: uppercase;
+    padding: 7px;
+    padding-right: 100px;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    $clip_path: polygon(0 0, 0% 100%, 90% 100%, 100% 0);
+    clip-path: $clip_path;
+    -webkit-clip-path: $clip_path;
+}
+
+.highlighted {
+    color: $highlighted;
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
