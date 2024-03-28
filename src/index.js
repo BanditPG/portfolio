@@ -12,31 +12,36 @@ import './stylesheets/structure.scss';
 import './stylesheets/text.scss';
 
 // Components
+import App from './components/App';
 import Landing from './components/Landing';
-import {
-  ThirdEyeModule,
-  Possibility,
-  Edusat
-} from './components/Projects';
+import ThirdEyeModule from './components/projects/ThirdEyeModule';
+import Possibility from './components/projects/Posibility';
+import Edusat from './components/projects/Edusat';
 
 // Router 
 const router = createBrowserRouter([
   {
     path: "/portfolio",
-    element: <Landing />,
+    element: <App />,
+    children: [
+      {
+        path: "",
+        element: <Landing />
+      },
+      {
+        path: "3rdem",
+        element: <ThirdEyeModule />
+      },
+      {
+        path: "possibility",
+        element: <Possibility />
+      },
+      {
+        path: "edusat",
+        element: <Edusat />
+      }
+    ]
   },
-  {
-    path: "/portfolio/3rdem",
-    element: <ThirdEyeModule />
-  },
-  {
-    path: "/portfolio/possibility",
-    element: <Possibility />
-  },
-  {
-    path: "/portfolio/edusat",
-    element: <Edusat />
-  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

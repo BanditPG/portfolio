@@ -33,12 +33,12 @@ aside {
     }
 }
 
-.profile, .project {
+.project {
     opacity: 0.8;
     //background-image: radial-gradient($accent 1.4000000000000001px, transparent 1.4000000000000001px);
     background-color: $default-background;
     background: repeating-linear-gradient( -45deg, $accent, $accent 1px, $default-background 5px, $default-background 25px );
-    
+    background-size: 120% 120%;
 }
 
 .description {

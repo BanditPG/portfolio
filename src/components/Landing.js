@@ -1,41 +1,20 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Project from './Project'
+import Background from "./Background";
 
-const Landing = () => {
-    const [mouseXY, setMouseXY] = useState(0);
 
-    const navigate = useNavigate();
-
-    const updateMousePosition = (event) => {
-        setMouseXY({ x: event.clientX, y: event.clientY })
-    }
-
-    useEffect(() => {
-        window.addEventListener('mousemove', updateMousePosition);
-        // eslint-disable-next-line
-    }, [])
-   
-
+export default function Landing() {
     return (
-        <main>
-            <aside>
-                <h1 
-                    onClick={() => navigate("/portfolio")} 
-                    className="banner"
-                >
-                    KOŁODZIEJ.DEV
-                </h1>
-            </aside>
-            <div 
-                style={{
-                    backgroundPosition: `${-mouseXY.x/100}px`
-                }}
-                className="contentContainer profile">
-                <div className="titles">
-                    <h1>Dominik Kołodziej</h1>
+        <>
+            <Background>
+                <div className="contentContainer profile">
+                    <div className="titles">
+                        <h1>Dominik Kołodziej</h1>
+                    </div>
                 </div>
-            </div>
+            </Background>
+
             <div className="contentContainer description">
                 <div className="verticalTitle">
                     <h1>O mnie</h1>
@@ -57,9 +36,6 @@ Nazywam się Dominik Kołodziej i jestem absolwentem kierunku Technik informatyk
                     <Project href="edusat">EDUSAT</Project>
                 </div>
             </div>
-            <footer>&copy; { new Date().getFullYear() } Dominik Kołodziej</footer>
-        </main>
+        </>
     )
 }
-
-export default Landing;

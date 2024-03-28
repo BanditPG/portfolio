@@ -1,13 +1,11 @@
 import { Link } from 'react-router-dom';
 
-const Project = (props) => {
+export default function Project({href, children}) {
     return (
-        <Link to={props.href}>
+        <Link to={href}>
             <div className="projectTile">
-                { props.children }
+                { children }
             </div>
         </Link>
     )
 }
-
-export default Project;
